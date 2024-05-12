@@ -2,3 +2,8 @@ body {
     background-color: #003546;
     color: #ffffff;
 }
+
+a {
+    color: #ffffff;
+    font-weight: bold;
+}
