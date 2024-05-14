@@ -30,6 +30,39 @@
                 </div>
             </div>
         </header>
-        <p>Coming soon...</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Media</h1>
+                    <p>Here is a list of media that I own. I'm testing keep records of it all in a MariaDB database.</p>
+                    <p>The different columns are the name, the medium of it, the platform (if it's a video game for example), and any additional notes I have</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <table class="table table-striped table-dark table-bordered table-hover">
+                        <caption class="media_caption">Trevor's owned media</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Medium</th>
+                                <th scope="col">Platform</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for media in media %}
+                            <tr>
+                                <td>{{ media.name }}</td>
+                                <td>{{ media.medium }}</td>
+                                <td>{{ media.platform }}</td>
+                                <td>{{ media.notes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

@@ -1,9 +1,18 @@
 body {
     background-color: #003546;
     color: #ffffff;
+    margin-left: 50;
+    margin-right: 50;
+    margin-top: 10;
+    margin-bottom: 10;
 }
 
 a {
     color: #ffffff;
     font-weight: bold;
+}
+
+.media_caption {
+    color:#ffffff;
+    opacity: 0.5;
 }
