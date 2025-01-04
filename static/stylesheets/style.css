@@ -44,6 +44,11 @@ a {
     padding: 20px;
 }
 
+.image-div {
+    border-radius: 25px;
+    overflow: hidden;
+}
+
 .about-me a {
     color:#000000
 }
