@@ -84,3 +84,6 @@ def fizzbuzzhelper(n):
             out += str(i)
         fullout = fullout + out + "\n"
     return fullout
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
