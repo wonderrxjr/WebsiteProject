@@ -29,6 +29,7 @@ def favicon():
                           'favicon.ico',mimetype='image/vnd.microsoft.icon')
 
 @app.route('/')
+@app.route('/index')
 def index():
     # Render the test.html template
     return render_template('index.html', **context)
