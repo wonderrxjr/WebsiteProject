@@ -4,14 +4,18 @@
 body {
     background-color: #003546;
     color: #ffffff;
-    margin-left: 50;
-    margin-right: 50;
-    margin-top: 10;
-    margin-bottom: 10;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+}
+
+footer {
+    margin-top: 20px;
 }
 
 a {
