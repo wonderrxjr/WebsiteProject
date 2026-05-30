@@ -23,6 +23,11 @@ a {
     font-weight: bold;
 }
 
+.nav-link-active {
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+
 .media_caption {
     color:#ffffff;
     opacity: 0.5;

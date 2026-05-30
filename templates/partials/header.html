@@ -1,0 +1,16 @@
+<header class="header border-bottom container py-3 mb-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 text-center text-md-start">
+                <h2><a href="/" style="text-decoration: none;">Trevor Buechler</a></h2>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <div class="d-flex flex-column flex-md-row justify-content-md-end gap-3">
+                    <a href="/" class="{% if request.path in ['/', '/index'] %}nav-link-active{% endif %}">Home</a>
+                    <a href="https://drive.google.com/file/d/1aUmBN7VAS_mY5-eliiD0aU_musLM4Oul/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="/contact" class="{% if request.path == '/contact' %}nav-link-active{% endif %}">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
