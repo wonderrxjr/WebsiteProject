@@ -3,11 +3,54 @@
 {% block title %}FizzBuzz{% endblock %}
 
 {% block content %}
-<form action="/fizzbuzz" method="post">
-    <div class="mb-3">
-        <label for="fizzbuzzin" class="form-label">How much FizzBuzz do you want to play?</label>
-        <input type="text" class="form-control" id="fizzbuzzin" name="fizzbuzz">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>FizzBuzz</h1>
+            <p>Enter a number below to generate the FizzBuzz sequence!</p>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 text-center">
+            <form action="/fizzbuzz" method="post">
+                <div class="mb-3 text-start">
+                    <label for="fizzbuzzin" class="form-label">How much FizzBuzz do you want to play?</label>
+                    <input type="number" class="form-control" id="fizzbuzzin" name="fizzbuzz" min="1" max="1000" placeholder="e.g. 15" value="{{ fizz_value if fizz_value is not none else '' }}" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    {% if results is not none %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+            {% if results %}
+            <h3>Results</h3>
+            <table class="table table-striped table-dark table-bordered table-hover mt-3">
+                <caption class="media_caption text-center">FizzBuzz results from 1 to {{ results|length }}</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 30%;">Number</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in results %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ item }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="alert alert-warning mt-3" role="alert">
+                Please enter a valid positive number.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}

@@ -36,7 +36,14 @@ def register_routes(app):
 
     @app.route('/fizzbuzz', methods=['GET', 'POST'])
     def fizzbuzz():
+        results = None
+        fizz_value = None
         if request.method == 'POST':
             fizz_value = request.form.get('fizzbuzz')
-            return generate_fizzbuzz(fizz_value)
-        return render_template('fizzbuzz.html', **get_context())
+            results = generate_fizzbuzz(fizz_value)
+        return render_template(
+            'fizzbuzz.html',
+            results=results,
+            fizz_value=fizz_value,
+            **get_context(),
+        )

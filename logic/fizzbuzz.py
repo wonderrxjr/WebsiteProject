@@ -1,17 +1,20 @@
 def generate_fizzbuzz(n):
-    """Return a FizzBuzz sequence as a newline-delimited string."""
+    """Return a FizzBuzz sequence as a list of strings."""
     if n is None:
-        n = 0
+        return []
 
     try:
         n = int(n)
     except (TypeError, ValueError):
-        return ""
+        return []
 
-    if n < 0:
-        n = 0
+    if n < 1:
+        return []
 
-    fullout = ""
+    if n > 1000:
+        n = 1000
+
+    results = []
     for i in range(1, n + 1):
         out = ""
         if i % 3 == 0:
@@ -20,6 +23,6 @@ def generate_fizzbuzz(n):
             out += "Buzz"
         if out == "":
             out += str(i)
-        fullout += out + "\n"
+        results.append(out)
 
-    return fullout
+    return results
